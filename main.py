@@ -16,7 +16,7 @@ def run_ai():
 
     while running == True:
 
-        user_input = input("you: ")
+        user_input = input("Paste your code that you would like deco to explain line by line: ")
 
         exitTriggers = ["exit", "quit", "q", "Q"]
 
@@ -28,7 +28,7 @@ def run_ai():
                 model="deepseek-chat",
                 messages=[
                     {"role": "user", "content": user_input},
-                    {"role": "system", "content": "You will answers the users request"},
+                    {"role": "system", "content": "You will explain the users code they have given you it may be in any coding language. Explain to the user in very simple launguage. If they past lots of code but request to you to explain one line explain only one line."},
                 ],
                 stream=True
             )
